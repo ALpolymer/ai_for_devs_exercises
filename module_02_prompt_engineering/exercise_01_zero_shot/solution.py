@@ -19,11 +19,12 @@ The response MUST be structured in JSON format as follows:
 Return ONLY the JSON object. No explanation, no markdown, no extra text.
 """
 
-response = ask(prompt=my_prompt, temperature=0)
+response = ask(prompt=my_prompt, temperature=0, provider="anthropic")
 
 
 try:
-    result = json.loads(response)
+    clean_response = response.replace("```json", "").replace("```", "").strip()
+    result = json.loads(clean_response)
     print("\n=== Parsed JSON ===")
     print(f"Sentiment       : {result['sentiment']}")
     print(f"Positive aspects: {result['positive_aspects']}")

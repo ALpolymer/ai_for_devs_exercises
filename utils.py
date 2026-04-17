@@ -34,7 +34,7 @@ def ask(prompt, system=None, temperature=0.7, max_tokens=200, provider="openai",
 
     # ----------------- ANTHROPIC -----------------
     elif provider.lower() == "anthropic":
-        actual_model = model or "claude-3-haiku-20240307"
+        actual_model = model or "claude-haiku-4-5-20251001"
         
         msgs = [{"role": "user", "content": prompt}]
         
