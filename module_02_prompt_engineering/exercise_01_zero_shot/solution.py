@@ -1,8 +1,5 @@
-import os
 import json
 from utils import ask
-
-
 
 my_prompt = """I would like to classify the following sentence:
 
@@ -34,3 +31,10 @@ try:
 except json.JSONDecodeError:
     print(f"{response}")
     print("Not valid JSON")
+
+# Απάντηση
+
+#     === Parsed JSON ===
+# Sentiment       : mixed
+# Positive aspects: ['πολύ ευχαριστημένος με την κάμερα']
+# Negative aspects: ['όχι με την μπαταρία']
