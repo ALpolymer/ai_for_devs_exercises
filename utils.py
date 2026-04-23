@@ -54,3 +54,16 @@ def ask(prompt, system=None, temperature=0.7, max_tokens=200, provider="openai",
     else:
         raise ValueError("Μη υποστηριζόμενος provider. Επίλεξε 'openai' ή 'anthropic'.")
     
+
+def create_pctf_prompt(persona:str, context:str, task: str, format:str) -> tuple[str, str]:
+
+    system_prompt = persona.strip()
+
+    user_prompt = f""" Context: {context.strip()}
+
+Task: {task.strip()}
+
+format: {format.strip()}
+"""
+    
+    return system_prompt, user_prompt
